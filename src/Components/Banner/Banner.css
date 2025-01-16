@@ -1,0 +1,70 @@
+/* Parent container for the banner */
+.bannerParentDiv {
+  padding-top: 4em; /* Adds space at the top */
+}
+
+.bannerParentDiv .bannerChildDiv {
+  /* Optional: Add styles for child div if needed */
+}
+
+/* Menu bar styles */
+.bannerParentDiv .bannerChildDiv .menuBar {
+  display: flex;
+  padding: 10px 16px;
+  justify-content: space-between; /* Ensures spacing between categories and other options */
+  align-items: center;
+}
+
+.bannerParentDiv .bannerChildDiv .menuBar span {
+  /* Add styles for general span inside menu bar if needed */
+}
+
+/* Category menu inside menu bar */
+.bannerParentDiv .bannerChildDiv .menuBar .categoryMenu span {
+  margin-right: 16px;
+  font-weight: bolder;
+  font-size: 16px; /* Optionally, adjust font size */
+}
+
+/* Styling for other quick options */
+.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions {
+  display: flex; /* Ensures quick options appear as flex items */
+}
+
+.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span {
+  padding: 10px;
+  font-size: 14px; /* Adjust font size for quick options */
+}
+
+/* Banner styling */
+.bannerChildDiv .banner {
+  position: relative;
+  width: 100vw; /* Full width of the viewport */
+  overflow: hidden; /* Prevents image from overflowing */
+}
+
+.bannerChildDiv .banner img {
+  width: 100%;
+  height: auto; /* Keeps the aspect ratio intact */
+  object-fit: cover; /* Ensures image covers the banner area without stretching */
+}
+
+/* Responsive Design for Smaller Screens */
+@media only screen and (max-width: 700px) {
+  /* Hide the quick options on smaller screens */
+  .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions {
+    display: none;
+  }
+
+  /* Adjust banner image for mobile screens */
+  .bannerChildDiv .banner img {
+    width: 100vw; /* Ensure full width on smaller screens */
+  }
+
+  /* Optional: Adjust menu bar styles for mobile */
+  .bannerParentDiv .bannerChildDiv .menuBar {
+    padding: 10px; /* Adjust padding for smaller screens */
+    flex-direction: column; /* Stack the items vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+}

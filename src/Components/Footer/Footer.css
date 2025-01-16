@@ -1,0 +1,60 @@
+/* Parent container for the footer */
+.footerParentDiv {
+  width: 99vw; /* Ensures the footer takes almost the full width of the viewport */
+}
+
+.footerParentDiv .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ebeeef; /* Light background for content section */
+  padding: 16px;
+}
+
+.footerParentDiv .content .heading {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #002f34; /* Ensures visibility against the background */
+}
+
+/* Footer section */
+.footerParentDiv .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #002f34; /* Dark background for footer */
+  color: whitesmoke; /* Light text color for contrast */
+}
+
+/* Paragraphs inside footer */
+.footerParentDiv .footer p {
+  margin: 0;
+  font-size: 14px; /* Adjust font size for readability */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 700px) {
+  /* Stack the content vertically on smaller screens */
+  .footerParentDiv .content {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    padding: 10px;
+  }
+
+  /* Adjust footer content for smaller screens */
+  .footerParentDiv .footer {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  /* Adjust heading font size for mobile screens */
+  .footerParentDiv .content .heading {
+    font-size: 20px; /* Smaller heading size */
+  }
+
+  /* Adjust paragraph size for mobile screens */
+  .footerParentDiv .footer p {
+    font-size: 12px; /* Smaller font for better mobile experience */
+  }
+}
