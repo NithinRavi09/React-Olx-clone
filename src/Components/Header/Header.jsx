@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { getAuth, signOut } from "firebase/auth"; // Import Firebase authentication functions
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import { getAuth, signOut } from "firebase/auth"; 
+import { useNavigate } from "react-router-dom"; 
 import "./Header.css";
 import OlxLogo from "../../assets/OlxLogo";
 import Search from "../../assets/Search";
@@ -12,15 +12,15 @@ import { AuthContext, FirebaseContext } from "../../../store/FirebaseContext";
 function Header() {
   const { user } = useContext(AuthContext);
   const { firebase } = useContext(FirebaseContext);
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
-  const auth = getAuth(firebase); // Initialize the Firebase Authentication instance
+  const auth = getAuth(firebase); 
 
   const handleLogout = () => {
-    signOut(auth) // Sign out the user using Firebase Authentication
+    signOut(auth) 
       .then(() => {
         console.log("User signed out successfully.");
-        navigate("/login"); // Redirect to the login page after successful logout
+        navigate("/login");
       })
       .catch((error) => {
         console.error("Error signing out:", error);

@@ -2,9 +2,9 @@ import React from "react";
 
 import Header from "../Components/Header/Header";
 import Banner from "../Components/Banner/Banner";
-
 import Posts from "../Components/Posts/Posts";
 import Footer from "../Components/Footer/Footer";
+import ParentComponent from "../Components/Sell/ParantComponent";
 const recommendationsData = [
   {
     id: 1,
@@ -77,6 +77,7 @@ function Home(props) {
     <div className="homeParentDiv">
       <Header />
       <Banner />
+      <ParentComponent/>
       <Posts recommendations={recommendationsData} />
       <Footer />
     </div>

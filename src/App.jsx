@@ -5,20 +5,21 @@ import Home from "./Pages/Home";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import { AuthContext, FirebaseContext } from "../store/FirebaseContext";
-import { getAuth, onAuthStateChanged } from "firebase/auth"; // Import modular auth
+import { getAuth, onAuthStateChanged } from "firebase/auth"; 
 import Create from "./Pages/Create";
 import View from "./Pages/ViewPost";
+import ViewSell from "./Pages/ViewSell";
 
 function App() {
   const { setUser } = useContext(AuthContext);
   const { firebase } = useContext(FirebaseContext);
 
   useEffect(() => {
-    const auth = getAuth(firebase); // Get auth instance using modular SDK
+    const auth = getAuth(firebase); 
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
-  });
+  },[]);
 
   return (
     <div>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/create" element={<Create />} />
           <Route path="/view/:id" element={<View />} />
+          <Route path="/viewSell/:id" element={<ViewSell />} />
         </Routes>
       </Router>
     </div>

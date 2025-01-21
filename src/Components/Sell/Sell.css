@@ -1,0 +1,92 @@
+/* Parent container for posts */
+.postParentDiv {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .recommendations {
+    width: 100%;
+    max-width: 1200px; /* Limit the max width for large screens */
+  }
+  
+  .heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Grid setup for the cards */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 20px;
+    padding: 0 10px; /* Add some padding to prevent overflow */
+  }
+  
+  .card {
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* For positioning favorite icon */
+  }
+  
+  .favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+  
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .content {
+    padding: 15px;
+  }
+  
+  .rate {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .kilometer {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .date {
+    font-size: 14px;
+    color: gray;
+    padding: 10px;
+  }
+  
+  /* Responsive grid layout for smaller screens */
+  @media only screen and (max-width: 1024px) {
+    .cards {
+      grid-template-columns: repeat(3, 1fr); /* 3 items per row for tablets */
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .cards {
+      grid-template-columns: repeat(
+        2,
+        1fr
+      ); /* 2 items per row for smaller screens */
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .cards {
+      grid-template-columns: 1fr; /* 1 item per row for mobile screens */
+    }
+  }
+  
